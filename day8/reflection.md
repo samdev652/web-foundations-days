@@ -1,0 +1,7 @@
+# Reflection
+
+The most difficult concept in the course was system design: estimating the load and then choosing components that fit the numbers. At first I added caches, replicas and queues just because the diagrams had them, without knowing what problem each one solved. I overcame this by working through the maths for every project. When I calculated that QuickNotes needed only about 60 writes per second at peak, I understood that one primary database was enough, and that every extra component must solve a measured problem. Writing one sentence per component about the problem it solves made the reasoning stick, and TicketHub showed me the opposite case, where a spike hundreds of times above normal traffic really does need a waiting room and a cache.
+
+Based on the feedback I received, I would improve my capstone by explaining its trade-offs more concretely, with numbers instead of general statements, and by testing the error cases of my API client more carefully, such as network failures and server errors. I would also add a short section on how the system is monitored, so the team knows when something is going wrong before users do.
+
+Next, I want to build and deploy a real version of the API I designed, with authentication, database transactions and automated tests, and then load-test it to see how it behaves when traffic grows. I also want to learn more about how databases handle concurrent writes, because the double-booking problem showed me how much depends on getting that right.
